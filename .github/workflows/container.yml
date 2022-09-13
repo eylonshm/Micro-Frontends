@@ -1,4 +1,4 @@
-name: deploy-container-one
+name: deploy-container-workflow
 
 on:
   push:
@@ -9,7 +9,7 @@ on:
 
 defaults:
   run:
-    working-directory: packages/container
+    working-directory: packages/container/**
 
 jobs:
   build:
