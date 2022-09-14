@@ -1,4 +1,4 @@
-name: deploy-container-workflow
+name: deploy-container
 
 on:
   push:
@@ -9,14 +9,13 @@ on:
 
 defaults:
   run:
-    working-directory: packages/container/**
+    working-directory: packages/container
 
 jobs:
   build:
     runs-on: ubuntu-latest
 
     steps:
-      - run: cd..
       - uses: actions/checkout@v3
       - run: npm install
       - run: npm run build
