@@ -5,18 +5,23 @@ on:
     branches:
       - main
     paths:
-      - './packages/container/**'
+      - 'packages/container/**'
 
 defaults:
   run:
-    working-directory: ./packages/container/**
+    working-directory: packages/container/**
 
 jobs:
   build:
     runs-on: ubuntu-latest
 
     steps:
-      - uses: actions/checkout@v2
+      - name: goBack
+      - run: cd..
+
+      - name: checkout
+      - uses: actions/checkout@v3
+
       - run: npm install
       - run: npm run build
 
