@@ -4,7 +4,7 @@ import { createMemoryHistory, createBrowserHistory } from 'history'
 import App from './App'
 
 const mount = (el, options) => {
-  const options = { onNavigate, onSignIn, defaultHistory, initialPath }
+  const { onNavigate, onSignIn, defaultHistory, initialPath } = options
   const history =
     defaultHistory ||
     createMemoryHistory({
