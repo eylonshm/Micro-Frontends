@@ -8,6 +8,9 @@ const devConfig = {
   devServer: {
     port: 8080,
     historyApiFallback: true,
+    output: {
+      publicPath: 'http://localhost:8080/',
+    },
   },
   plugins: [
     new ModuleFederationPlugin({
