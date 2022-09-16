@@ -1,28 +1,28 @@
-import React from 'react';
-import Avatar from '@material-ui/core/Avatar';
-import Button from '@material-ui/core/Button';
-import TextField from '@material-ui/core/TextField';
-import FormControlLabel from '@material-ui/core/FormControlLabel';
-import Checkbox from '@material-ui/core/Checkbox';
-import Grid from '@material-ui/core/Grid';
-import Box from '@material-ui/core/Box';
-import LockOutlinedIcon from '@material-ui/icons/LockOutlined';
-import Typography from '@material-ui/core/Typography';
-import { makeStyles } from '@material-ui/core/styles';
-import Container from '@material-ui/core/Container';
-import { Link } from 'react-router-dom';
+import React from 'react'
+import Avatar from '@material-ui/core/Avatar'
+import Button from '@material-ui/core/Button'
+import TextField from '@material-ui/core/TextField'
+import FormControlLabel from '@material-ui/core/FormControlLabel'
+import Checkbox from '@material-ui/core/Checkbox'
+import Grid from '@material-ui/core/Grid'
+import Box from '@material-ui/core/Box'
+import LockOutlinedIcon from '@material-ui/icons/LockOutlined'
+import Typography from '@material-ui/core/Typography'
+import { makeStyles } from '@material-ui/core/styles'
+import Container from '@material-ui/core/Container'
+import { Link } from 'react-router-dom'
 
 function Copyright() {
   return (
-    <Typography variant="body2" color="textSecondary" align="center">
+    <Typography variant='body2' color='textSecondary' align='center'>
       {'Copyright © '}
-      <Link color="inherit" to="/">
-        Your Website
+      <Link color='inherit' to='/'>
+        MicroFrontends
       </Link>{' '}
       {new Date().getFullYear()}
       {'.'}
     </Typography>
-  );
+  )
 }
 
 const useStyles = makeStyles((theme) => ({
@@ -48,64 +48,50 @@ const useStyles = makeStyles((theme) => ({
   submit: {
     margin: theme.spacing(3, 0, 2),
   },
-}));
+}))
 
 export default function SignIn({ onSignIn }) {
-  const classes = useStyles();
+  const classes = useStyles()
 
   return (
-    <Container component="main" maxWidth="xs">
+    <Container component='main' maxWidth='xs'>
       <div className={classes.paper}>
         <Avatar className={classes.avatar}>
           <LockOutlinedIcon />
         </Avatar>
-        <Typography component="h1" variant="h5">
+        <Typography component='h1' variant='h5'>
           Sign in
         </Typography>
-        <form
-          onSubmit={(e) => e.preventDefault()}
-          className={classes.form}
-          noValidate
-        >
+        <form onSubmit={(e) => e.preventDefault()} className={classes.form} noValidate>
           <TextField
-            variant="outlined"
-            margin="normal"
+            variant='outlined'
+            margin='normal'
             required
             fullWidth
-            id="email"
-            label="Email Address"
-            name="email"
-            autoComplete="email"
+            id='email'
+            label='Email Address'
+            name='email'
+            autoComplete='email'
             autoFocus
           />
           <TextField
-            variant="outlined"
-            margin="normal"
+            variant='outlined'
+            margin='normal'
             required
             fullWidth
-            name="password"
-            label="Password"
-            type="password"
-            id="password"
-            autoComplete="current-password"
+            name='password'
+            label='Password'
+            type='password'
+            id='password'
+            autoComplete='current-password'
           />
-          <FormControlLabel
-            control={<Checkbox value="remember" color="primary" />}
-            label="Remember me"
-          />
-          <Button
-            type="submit"
-            fullWidth
-            variant="contained"
-            color="primary"
-            className={classes.submit}
-            onClick={onSignIn}
-          >
+          <FormControlLabel control={<Checkbox value='remember' color='primary' />} label='Remember me' />
+          <Button type='submit' fullWidth variant='contained' color='primary' className={classes.submit} onClick={onSignIn}>
             Sign In
           </Button>
           <Grid container>
             <Grid item>
-              <Link to="/auth/signup">{"Don't have an account? Sign Up"}</Link>
+              <Link to='/auth/signup'>{"Don't have an account? Sign Up"}</Link>
             </Grid>
           </Grid>
         </form>
@@ -114,5 +100,5 @@ export default function SignIn({ onSignIn }) {
         <Copyright />
       </Box>
     </Container>
-  );
+  )
 }
